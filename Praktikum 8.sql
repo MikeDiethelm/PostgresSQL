@@ -23,5 +23,34 @@ CONSTRAINT FK_Mitarbeiter FOREIGN KEY (MVorname,MName) REFERENCES Mitarbeiter(Vo
 CONSTRAINT FK_Firma FOREIGN KEY (FName) REFERENCES Firma(Name)
 );
 
+select * from Anstellung;
+
 -- Aufgabe 2
+ALTER TABLE Firma ADD Gründungsjahr integer NOT NULL;
+ALTER TABLE Anstellung ADD Jahreslohn Decimal(8,2) NOT NULL;
+
+-- Aufgabe 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
