@@ -9,9 +9,10 @@ CONSTRAINT PK_Mitarbeiter PRIMARY KEY (Vorname,Name)
 DROP TABLE IF EXISTS Firma;
 CREATE TABLE Firma(
 Name VARCHAR(200) NOT NULL,
-CONSTRAINT Firma PRIMARY KEY (Name)
+CONSTRAINT PK_Firma PRIMARY KEY (Name)
 );
 
+-- Wie genau wird hier die Kardinalität mit Schlüsseln sichergestellt?
 DROP TABLE IF EXISTS Anstellung;
 CREATE TABLE Anstellung(
   MVorname varchar(100) NOT NULL,
