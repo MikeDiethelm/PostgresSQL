@@ -23,7 +23,6 @@ CONSTRAINT FK_Mitarbeiter FOREIGN KEY (MVorname,MName) REFERENCES Mitarbeiter(Vo
 CONSTRAINT FK_Firma FOREIGN KEY (FName) REFERENCES Firma(Name)
 );
 
-select * from Anstellung;
 
 -- Aufgabe 2
 ALTER TABLE Firma ADD Gründungsjahr integer NOT NULL;
@@ -37,6 +36,47 @@ ALTER TABLE Mitarbeiter ADD Strasse varchar(100) NOT NULL;
 ALTER TABLE Mitarbeiter ADD Hausnummer varchar(8) NULL;
 
 -- Aufgabe 4
+INSERT INTO Firma(Name,Gründungsjahr) VALUES 
+('Galaxus',1988), 
+('Denner',1989),
+('Migrolino',1990);
+INSERT INTO Mitarbeiter(Vorname,Name,Strasse,Hausnummer,Ort,PLZ) VALUES
+('Mike','Diethelm','Bruggacherstrasse','24','Faellanden',8117),
+('Jan','Imhof','Dojostrasse','12','Uster',8610),
+('Erich','Goetschi','Poststrasse','1','Wegenstetten',4317),
+('Yves','Wirz','Luzstrasse',NULL,'Kriens',6010),
+('Adrian','Moser','St.gallerstr','56','St.gallen',9000);
+
+INSERT INTO Anstellung (MVorname, MName, FName, Jahreslohn) VALUES
+('Mike','Diethelm','Galaxus',120000),
+('Jan','Imhof','Galaxus',120000),
+('Erich','Goetschi','Denner',100000),
+('Yves','Wirz','Denner',100000),
+('Adrian','Moser','Migrolino',115000);
+
+select * from anstellung;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
