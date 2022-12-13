@@ -30,6 +30,36 @@ ALTER TABLE Firma ADD Gründungsjahr integer NOT NULL;
 ALTER TABLE Anstellung ADD Jahreslohn Decimal(8,2) NOT NULL;
 
 -- Aufgabe 3
+select * from mitarbeiter;
+ALTER TABLE mitarbeiter ADD PLZ integer NOT NULL;
+ALTER TABLE Mitarbeiter ADD Ort varchar(100) NOT NULL;
+ALTER TABLE Mitarbeiter ADD Strasse varchar(100) NOT NULL;
+ALTER TABLE Mitarbeiter ADD Hausnummer varchar(8) NULL;
+
+-- Aufgabe 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
