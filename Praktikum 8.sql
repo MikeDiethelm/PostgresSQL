@@ -54,7 +54,11 @@ INSERT INTO Anstellung (MVorname, MName, FName, Jahreslohn) VALUES
 ('Yves','Wirz','Denner',100000),
 ('Adrian','Moser','Migrolino',115000);
 
-select * from anstellung;
+-- Aufgabe 5
+ALTER TABLE Mitarbeiter ADD Telefonnummer varchar(12) NOT NULL DEFAULT 'n/a'; -- Was macht DEFAULT 'n/a' ?
+-- Da bereits Datensätze für Mitarbeiter vorhanden sind, werden auch diese um eine neue Spalte erweitert.
+-- Wenn nun „NOT NULL“ definiert ist, aber kein „DEFAULT“, wird automa- tisch NULL als Wert in den neuen Spalten
+-- der bestehenden Datensätze eingefügt. Dies ver- letzt in diesem Moment jedoch sofort die eben definierte Einschränkung.
 
 
 
