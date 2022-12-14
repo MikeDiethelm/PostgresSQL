@@ -88,57 +88,21 @@ ALTER TABLE Mitarbeiter ADD Telefonnummer varchar(12) NOT NULL DEFAULT 'n/a'; --
 
 
 
+-- Aufgabe 7
+-- Ändern Sie den Namen einer Ihrer erfassten Firmen (UPDATE).
+--	1) Erstellen Sie ein passendes SQL Statement und führen Sie es aus. Was passiert und warum?
+--	2) Was ist notwendig, um dieses Update durchführen zu können? Nehmen Sie die Änderungen
+--	   vor und führen Sie das UPDATE-Statement aus.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Aufgabe 8
+-- Stellen Sie sicher, dass Sie alle bisherigen SQL-Anweisungen noch in einer Datei zur Verfügung haben, um das Schema 
+-- wiederherzustellen. Alternativ können Sie versuchen, von Ihrem DBMS ein Script für das Schema zu exportieren 
+-- (ob und wie das funktioniert ist abhängig vom DBMS).
+-- Schreiben Sie ein SQL Statement zum Löschen der Mitarbeitertabelle (DROP TABLE) und führen Sie es aus. 
+-- Warum geht dies nicht ohne weiteres? Ergänzen Sie das Statement um den notwendigen Zusatz, damit die Tabelle gelöscht 
+-- werden kann.
 
 
 
