@@ -18,6 +18,9 @@ CONSTRAINT PK_Firma PRIMARY KEY (Name)
 );
 
 -- Wie genau wird hier die Kardinalität mit Schlüsseln sichergestellt?
+-- Laut Beschreibung soll ein Mitarbeiter höchstens bei einer Firma tätig sein, mit dieser Implementation kann jedoch 
+-- ein Mitarbeiter bei beliebig vielen Firmen angestellt sein, also eine m zu m Beziehung und nicht wie verlangt eine
+-- m zu 1 oder 1 zu m Beziehung.
 DROP TABLE IF EXISTS Anstellung;
 CREATE TABLE Anstellung(
   MVorname varchar(100) NOT NULL,
@@ -85,15 +88,25 @@ ALTER TABLE Mitarbeiter ADD Telefonnummer varchar(12) NOT NULL DEFAULT 'n/a'; --
 
 -- Aufgabe 6
 -- Ändern Sie nun die Adresse eines Mitarbeiters (UPDATE). Verwenden Sie dazu eine neue Adresse ohne Hausnummer.
-
-
+UPDATE
+  Mitarbeiter
+SET
+  PLZ      = '8401',
+  Ort      = 'Winterthur',
+  Strasse  = 'Im Lee',
+  Hausnummer   = NULL
+WHERE
+  Name = 'Diethelm' AND Vorname = 'Mike';
+select * from mitarbeiter;
 
 -- Aufgabe 7
 -- Ändern Sie den Namen einer Ihrer erfassten Firmen (UPDATE).
 --	1) Erstellen Sie ein passendes SQL Statement und führen Sie es aus. Was passiert und warum?
 --	2) Was ist notwendig, um dieses Update durchführen zu können? Nehmen Sie die Änderungen
 --	   vor und führen Sie das UPDATE-Statement aus.
-
+UPDATE Firma 
+SET
+	
 
 
 -- Aufgabe 8
