@@ -48,8 +48,8 @@ WHERE NOT EXISTS(SELECT * FROM Gast g WHERE b.Name = g.Bname AND b.Vorname = g.B
 --  Wohnstrasse besuchen.
 SELECT Distinct b.Name, b.Vorname, b.Strasse FROM Besucher b
 WHERE NOT EXISTS(
-    
-    )
+    SELECT 1 FROM Gast g, Restaurant r WHERE b.name=g.bname AND b.vorname=g.bvorname
+                                         AND g.rname=r.name AND b.strasse=r.strasse);
 
 -- 8) Gesucht sind Namen und Vornamen von Besuchern, die das Glück haben, dass es ein Restau-
 -- rant gibt, welches eines ihrer Lieblingsbiere im Sortiment hat.
