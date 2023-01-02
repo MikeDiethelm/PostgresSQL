@@ -53,7 +53,8 @@ WHERE NOT EXISTS(
 
 -- 8) Gesucht sind Namen und Vornamen von Besuchern, die das Glück haben, dass es ein Restau-
 -- rant gibt, welches eines ihrer Lieblingsbiere im Sortiment hat.
--- ToDo
+SELECT DISTINCT Bname, Bvorname FROM Lieblingsbier NATURAL JOIN Sortiment; -- Zeichnung machen!
+
 
 -- 9) Gesucht sind die Lieblingsbiersorten derjenigen Gäste des Restaurant ‚Löwen‘, deren Vorname
 -- mit ‚P‘ beginnt. (Algebraischer Ausdruck und SQL)
