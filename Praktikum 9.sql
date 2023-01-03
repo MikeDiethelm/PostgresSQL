@@ -53,15 +53,26 @@ WHERE NOT EXISTS(
 
 -- 8) Gesucht sind Namen und Vornamen von Besuchern, die das Glück haben, dass es ein Restau-
 -- rant gibt, welches eines ihrer Lieblingsbiere im Sortiment hat.
-SELECT DISTINCT Bname, Bvorname FROM Lieblingsbier NATURAL JOIN Sortiment; -- Zeichnung machen!
+SELECT DISTINCT Bname, Bvorname FROM (Lieblingsbier NATURAL JOIN Sortiment); -- Zeichnung machen!!!
 
 
 -- 9) Gesucht sind die Lieblingsbiersorten derjenigen Gäste des Restaurant ‚Löwen‘, deren Vorname
 -- mit ‚P‘ beginnt. (Algebraischer Ausdruck und SQL)
--- ToDo
+
+-- Equi-join?
+SELECT DISTINCT Bsorte
+From Lieblingsbier l, Gast g
+            WHERE g.bvorname LIKE 'P%' AND g.rname ='Löwen' AND l.bname = g.bname AND l.bvorname = g.bvorname;
+
+SELECT DISTINCT Bsorte From Lieblingsbier l JOIN gast g on l.bname = g.bname AND l.bvorname = g.bvorname
+WHERE g.bvorname LIKE 'P%' AND g.rname ='Löwen';
+
+
 
 -- 10) An welchen Strassen gibt es mindestens drei Restaurants? (ohne Gruppierung zu lösen)
--- ToDo
+SELECT Distinct r1.strasse FROM Restaurant r1,Restaurant r2, Restaurant r3
+WHERE r1.strasse = r2.strasse AND r2.strasse=r3.strasse AND NOT(r1.name=r2.name OR r1.name=r3.name OR r2.name=r3.name);
+
 
 
 
