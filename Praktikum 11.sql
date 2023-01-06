@@ -35,14 +35,18 @@ GROUP BY PNr
 HAVING AVG(Menge) > (SELECT MAX(Menge) FROM Ltp WHERE PNr = 'P1');
 
 -- 7. Finden Sie die Teilenummern aller Teile, welche an alle Projekte in Winterthur geliefert werden.
-SELECT Distinct TNr FROM LTP,P WHERE LTP.pnr = P.pnr AND stadt='Winterthur';
-SELECT Distinct TNr FROM LTP JOIN P ON LTP.pnr = P.pnr AND stadt='Winterthur';
+
 
 -- 8. Finden Sie die Lieferantennummern aller Lieferanten mit Status kleiner als der Status von Sulzer.
 SELECT DISTINCT LNr FROM L WHERE L.status < (SELECT status FROM L WHERE lname='Sulzer');
 
 -- 9. Finden Sie alle Paare von verschiedenen Teilenummern, bei denen es einen Lieferanten gibt,
 -- welcher beide Teile liefert.
+SELECT DISTINCT x.TNr, y.TNr
+FROM LTP AS x, LTP AS y
+WHERE x.LNr = y.LNr AND x.TNr < y.TNr;
 
+SELECT DISTINCT x.tnr, y.tnr FROM ltp as x, ltp as y
+WHERE x.lnr = y.lnr AND x.tnr < y.tnr;
 
 -- 10. Finden Sie die Anzahl Projekte, zu denen der Lieferant mit dem Namen “Sulzer“ beiträgt.
