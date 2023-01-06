@@ -60,3 +60,4 @@ SELECT COUNT(DISTINCT LTP.PNr) AS AnzahlProjekte FROM LTP
     JOIN L
     ON LTP.LNr = L.LNr
     WHERE L.LName = 'Sulzer';
+
