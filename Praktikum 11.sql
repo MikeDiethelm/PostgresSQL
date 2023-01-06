@@ -50,3 +50,13 @@ SELECT DISTINCT x.tnr, y.tnr FROM ltp as x, ltp as y
 WHERE x.lnr = y.lnr AND x.tnr < y.tnr;
 
 -- 10. Finden Sie die Anzahl Projekte, zu denen der Lieferant mit dem Namen “Sulzer“ beiträgt.
+SELECT count(*) FROM
+    (SELECT LTP.PNr  FROM L,LTP WHERE L.lnr=LTP.lnr AND L.lname='Sulzer') AS Anzahl;
+
+SELECT count(*) FROM
+    (SELECT LTP.PNr  FROM LTP JOIN L ON L.lnr=LTP.lnr WHERE L.lname='Sulzer') AS Anzahl;
+
+SELECT COUNT(DISTINCT LTP.PNr) AS AnzahlProjekte FROM LTP
+    JOIN L
+    ON LTP.LNr = L.LNr
+    WHERE L.LName = 'Sulzer';
