@@ -2,7 +2,7 @@
 -- 1. Finden Sie alle verschiedenen Teilefarben/Teilestädte-Kombinationen.
 -- (Mit “alle“ ist gemeint “alle, die zur Zeit in der DB gespeichert sind“, und nicht alle überhaupt möglichen.)
 SELECT DISTINCT Farbe, Stadt FROM T;
-
+SELECT DISTINCT Farbe  from T;
 -- 2. Finden Sie alle Lieferantennummern/Teilenummern/Projektnummern-Kombinationen, bei denen Lieferant,
 -- Teil und Projekt alle aus derselben Stadt kommen.
 SELECT LNr, TNr, PNr FROM (L JOIN T ON L.Stadt = T.Stadt) JOIN P ON T.Stadt = P.Stadt;
@@ -36,6 +36,10 @@ HAVING AVG(Menge) > (SELECT MAX(Menge) FROM Ltp WHERE PNr = 'P1');
 
 -- 7. Finden Sie die Teilenummern aller Teile, welche an alle Projekte in Winterthur geliefert werden.
 
+
+-- Finden Sie jene Teile, welche in allen Projekten verwendet werden.
+ SELECT DISTINCT x.TNr FROM LTP AS x, P AS y WHERE x.pnr = y.pnr AND ;
+SELECT DISTINCT TNr FROM  LTP NATURAL JOIN P;
 
 -- 8. Finden Sie die Lieferantennummern aller Lieferanten mit Status kleiner als der Status von Sulzer.
 SELECT DISTINCT LNr FROM L WHERE L.status < (SELECT status FROM L WHERE lname='Sulzer');
