@@ -2,7 +2,7 @@
 -- 1. Finden Sie alle verschiedenen Teilefarben/Teilestädte-Kombinationen.
 -- (Mit “alle“ ist gemeint “alle, die zur Zeit in der DB gespeichert sind“, und nicht alle überhaupt möglichen.)
 SELECT DISTINCT Farbe, Stadt FROM T;
-SELECT DISTINCT Farbe  from T;
+
 -- 2. Finden Sie alle Lieferantennummern/Teilenummern/Projektnummern-Kombinationen, bei denen Lieferant,
 -- Teil und Projekt alle aus derselben Stadt kommen.
 SELECT LNr, TNr, PNr FROM (L JOIN T ON L.Stadt = T.Stadt) JOIN P ON T.Stadt = P.Stadt;
@@ -20,6 +20,7 @@ CREATE VIEW BStadtTeile AS
 SELECT * FROM T
 WHERE Stadt LIKE 'B%';
 SELECT TName,Gewicht FROM BStadtTeile WHERE Farbe = 'Blau';
+
 
 -- 5. Finden Sie die Lieferantennummern aller Lieferanten, die ein Teil liefern das aus einer Stadt stammt,
 -- deren Namen mit ‚B‘ beginnt (verwenden Sie obige Sicht).

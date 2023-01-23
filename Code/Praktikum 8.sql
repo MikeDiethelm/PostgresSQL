@@ -17,10 +17,8 @@ Name VARCHAR(200) NOT NULL,
 CONSTRAINT PK_Firma PRIMARY KEY (Name)
 );
 
--- Wie genau wird hier die Kardinalität mit Schlüsseln sichergestellt?
--- Laut Beschreibung soll ein Mitarbeiter höchstens bei einer Firma tätig sein, mit dieser Implementation kann jedoch 
--- ein Mitarbeiter bei beliebig vielen Firmen angestellt sein, also eine m zu m Beziehung und nicht wie verlangt eine
--- m zu 1 oder 1 zu m Beziehung.
+-- Beziehungstyp
+-- Kardinalitäten werden mit Primärschlüssel sichergestellt
 DROP TABLE IF EXISTS Anstellung;
 CREATE TABLE Anstellung(
   MVorname varchar(100) NOT NULL,
@@ -45,11 +43,11 @@ ALTER TABLE Anstellung ADD Jahreslohn Decimal(8,2) NOT NULL;
 -- Aufgabe 3
 -- Die Adressen von Mitarbeitern sollen nun auch erfasst werden. Schreiben Sie SQL-Anweisungen für das Hinzufügen von 
 -- Attributen für PLZ, Ort, Strasse und Hausnummer hinzu. Überlegen Sie, für welche Attribute es sinnvoll ist, 
--- nicht immer einen Wert bei der Eingabe zu erzwingen. Überlegen Sie die Kon- sequenzen Ihrer Wahl der Datentypen. 
+-- nicht immer einen Wert bei der Eingabe zu erzwingen. Überlegen Sie die Konsequenzen Ihrer Wahl der Datentypen.
 ALTER TABLE mitarbeiter ADD PLZ integer NOT NULL;
 ALTER TABLE Mitarbeiter ADD Ort varchar(100) NOT NULL;
 ALTER TABLE Mitarbeiter ADD Strasse varchar(100) NOT NULL;
-ALTER TABLE Mitarbeiter ADD Hausnummer varchar(8) NULL;
+ALTER TABLE Mitarbeiter ADD Hausnummer varchar(8) NULL; -- Es gibt einige Häuser ohne Hausnummern? wtf
 
 -- Aufgabe 4
 -- Fügen Sie nun Tupel in Ihre Tabellen ein (INSERT). Schauen Sie ggf. auf den Folien von Vorlesung 7 nach. 
